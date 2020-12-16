@@ -13,10 +13,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
 
         button1.setOnClickListener(this)
+        button2.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         val intent = Intent(this, SecondClacApp::class.java)
+        intent.putExtra("VALUE1", editText1.text.toString().toFloat())
+        intent.putExtra("VALUE2", editText2.text.toString().toFloat())
         startActivity(intent)
 
     }
