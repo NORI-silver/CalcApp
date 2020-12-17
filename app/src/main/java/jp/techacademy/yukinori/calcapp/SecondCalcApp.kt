@@ -8,10 +8,7 @@ class SecondClacApp : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second_calc_app)
-
-        val value1 = intent.getFloatExtra("VALUE1",0)
-        val value2 = intent.getFloatExtra("VALUE2",0)
-
-        textView.text = "${value1 + value2}"
+        val value1 = intent.getFloatExtra("VALUE1",0f)
+        textView.text = "${value1}"
     }
 }

@@ -14,13 +14,32 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         button1.setOnClickListener(this)
         button2.setOnClickListener(this)
+        button3.setOnClickListener(this)
+        button4.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         val intent = Intent(this, SecondClacApp::class.java)
-        intent.putExtra("VALUE1", editText1.text.toString().toFloat())
-        intent.putExtra("VALUE2", editText2.text.toString().toFloat())
-        startActivity(intent)
+        val edit_text_value1 = editText1.text.toString().toFloat()
+        val edit_text_value2 = editText2.text.toString().toFloat()
+
+        if(v?.id == R.id.button1) {
+            val edit_text_value3 = edit_text_value1 + edit_text_value2
+            intent.putExtra("VALUE1", edit_text_value3)
+            startActivity(intent)
+        } else if(v?.id == R.id.button2){
+            val edit_text_value3 = edit_text_value1 - edit_text_value2
+            intent.putExtra("VALUE1", edit_text_value3)
+            startActivity(intent)
+        } else if(v?.id == R.id.button3) {
+            val edit_text_value3 = edit_text_value1 * edit_text_value2
+            intent.putExtra("VALUE1", edit_text_value3)
+            startActivity(intent)
+        } else if(v?.id == R.id.button4) {
+            val edit_text_value3 = edit_text_value1 / edit_text_value2
+            intent.putExtra("VALUE1", edit_text_value3)
+            startActivity(intent)
+        } 
 
     }
 }
